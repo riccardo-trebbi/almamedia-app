@@ -1,32 +1,23 @@
 {
-"update_url":"http://clients2.google.com/service/update2/crx",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "name": "AlmaMedia",
   "description": "Calcola la tua media pesata da AlmaEsami con un semplice click!",
-  "version": "3.0.0",
-  "icons": {"16": "icon32.png",
-			"48": "icon96.png",
-            "128": "icon256.png" },
-  "permissions": [
-	"https://*.unibo.it/*"
-	],
-  "background": {
-    "scripts": ["background.js"]
+  "version": "3.1.0",
+  "icons": { "16": "icon32.png", "48": "icon96.png", "128": "icon256.png" },
+  "action": {
+    "default_title": "Clicca qui per conoscere la tua media",
+    "default_icon": "icon256.png",
+    "default_popup": "popup.html"
   },
-  "page_action" :
-  {
-      "default_name": "AlmaMedia",
-      "default_icon": "icon256.png",
-      "default_popup": "popup.html",
-	  "default_title": "Clicca qui per conoscere la tua media"
+  "background": {
+    "service_worker": "background.js"
   },
   "content_scripts": [
-	{
-		"matches" : [
-			"file:///*",
-			"https://*.unibo.it/*"
-		],
-		"js": ["jquery-1.9.1.js", "datatypes.js", "almamedia.js"]
+    {
+      "matches": ["file:///*", "https://almaesami.unibo.it/*"],
+      "js": ["jquery-1.9.1.js", "datatypes.js", "almamedia.js"]
     }
-  ]
+  ],
+  "permissions": ["activeTab"],
+  "host_permissions": ["file:///*", "https://almaesami.unibo.it/*"]
 }

@@ -1,12 +1,10 @@
-// eventPage.js
-function onRequest(request, sender, sendResponse) {
-  // Show the page action for the tab that the sender (content script)
-  // was on.
-  chrome.pageAction.show(sender.tab.id);
+// Listen for messages from content scripts
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+  // Show the action icon for the tab that the sender (content script) was on
+  if (sender.tab && sender.tab.id) {
+    chrome.action.enable(sender.tab.id)
+  }
 
-  // Return nothing to let the connection be cleaned up.
-  sendResponse({});
-};
-
-// Listen for the content script to send a message to the background page.
-chrome.extension.onRequest.addListener(onRequest);
+  // Return nothing to let the connection be cleaned up
+  sendResponse({})
+})

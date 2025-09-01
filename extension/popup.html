@@ -1,113 +1,121 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>AlmaMedia</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="default.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="default.css" />
     <script type="text/javascript" src="jquery-1.9.1.js"></script>
     <script type="text/javascript" src="datatypes.js"></script>
     <script type="text/javascript" src="popup.js"></script>
-</head>
-<body>
-<div class="alert alert-danger" id="info">Oops! Qualcosa non torna!<br/><br/>
-    L'applicazione non riesce a leggere il contenuto della pagina.<br/><br/>
-    Perfavore segnala questo bug a:<br/>
-    riccardo.trebbi2@gmail.com
-</div>
-<div id="results">
-    <h1 class="h4 text-center mb-4">Benvenuto <span id="studentName"></span>!</h1>
-    <div class="statistics row mb-4">
-        <div class="col-4">
-            <div class="box media">
-                <div class="content">
-                    <span class="header">Voto attuale</span>
-                    <h2>
-                        <span id="media"></span>
-                        <small class="small-label"> / 30</small>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="box cfu">
-                <div class="content">
-                    <span class="header">Crediti</span>
-                    <h2>
-                        <span id="cfu"></span>
-                        <small class="small-label"> CFU</small>
-                    </h2>
-                </div>
-            </div>
-        </div>
-        <div class="col-4">
-            <div class="box media_centodieci">
-                <div class="content">
-                    <span class="header">Voto Laurea</span>
-                    <h2>
-                        <span id="media_centodieci"></span>
-                        <small class="small-label"> / 110</small>
-                    </h2>
-                </div>
-            </div>
-        </div>
+  </head>
+  <body>
+    <div class="alert alert-danger" id="info">
+      Oops! Qualcosa non torna!<br /><br />
+      L'applicazione non riesce a leggere il contenuto della pagina.<br /><br />
+      Perfavore segnala questo bug a:<br />
+      riccardo.trebbi2@gmail.com
     </div>
-
-    <hr>
-
-    <h2 class="h5 text-center mb-2">Prossimi esami</h2>
-    <p class="text-muted text-center m-0">Scopri come può cambiare la tua media in
-        tempo reale!</p>
-
-    <form class="exam-form mt-4" novalidate>
-        <div class="rows">
-            <div class="form-row exam-row mb-2">
-                <div class="col">
-                    <input type="number"
-                           name="grade"
-                           class="grade-input form-control form-control-sm"
-                           min="18" max="30"
-                           placeholder="Voto"
-                           required>
-                    <div class="invalid-feedback">
-                        Inserisci il voto (18-30).
-                    </div>
-                </div>
-                <div class="col">
-                    <input type="number" name="credits"
-                           class="credits-input form-control form-control-sm"
-                           min="0"
-                           placeholder="Crediti"
-                           required>
-                    <div class="invalid-feedback">
-                        Inserisci i crediti.
-                    </div>
-                </div>
-                <div class="col-1">
-                    <button type="button" class="close remove-btn" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
+    <div id="results">
+      <h1 class="h4 text-center mb-4">Benvenuto <span id="studentName"></span>!</h1>
+      <div class="statistics row mb-4">
+        <div class="col-4">
+          <div class="box media">
+            <div class="content">
+              <span class="header">Voto attuale</span>
+              <h2>
+                <span id="media"></span>
+                <small class="small-label"> / 30</small>
+              </h2>
             </div>
+          </div>
         </div>
-        <button title="Aggiungi un nuovo esame" class="btn btn-light btn-sm mb-4" type="button" id="add">
-            Add
+        <div class="col-4">
+          <div class="box cfu">
+            <div class="content">
+              <span class="header">Crediti</span>
+              <h2>
+                <span id="cfu"></span>
+                <small class="small-label"> CFU</small>
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="col-4">
+          <div class="box media_centodieci">
+            <div class="content">
+              <span class="header">Voto Laurea</span>
+              <h2>
+                <span id="media_centodieci"></span>
+                <small class="small-label"> / 110</small>
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr />
+
+      <h2 class="h5 text-center mb-2">Prossimi esami</h2>
+      <p class="text-muted text-center m-0">
+        Scopri come può cambiare la tua media in tempo reale!
+      </p>
+
+      <form class="exam-form mt-4" novalidate>
+        <div class="rows">
+          <div class="form-row exam-row mb-2">
+            <div class="col">
+              <input
+                type="number"
+                name="grade"
+                class="grade-input form-control form-control-sm"
+                min="18"
+                max="30"
+                placeholder="Voto"
+                required
+              />
+              <div class="invalid-feedback">Inserisci il voto (18-30).</div>
+            </div>
+            <div class="col">
+              <input
+                type="number"
+                name="credits"
+                class="credits-input form-control form-control-sm"
+                min="0"
+                placeholder="Crediti"
+                required
+              />
+              <div class="invalid-feedback">Inserisci i crediti.</div>
+            </div>
+            <div class="col-1">
+              <button type="button" class="close remove-btn" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <button
+          title="Aggiungi un nuovo esame"
+          class="btn btn-light btn-sm mb-4"
+          type="button"
+          id="add"
+        >
+          Add
         </button>
         <div class="row">
-            <div class="col-auto pr-0">
-                <button type="submit" class="btn btn-primary" id="calcola">Calcola</button>
-            </div>
-            <div class="col-auto pl-2">
-                <button type="reset" class="btn btn-secondary" id="reset">Reset</button>
-            </div>
+          <div class="col-auto pr-0">
+            <button type="submit" class="btn btn-primary" id="calcola">Calcola</button>
+          </div>
+          <div class="col-auto pl-2">
+            <button type="reset" class="btn btn-secondary" id="reset">Reset</button>
+          </div>
         </div>
-    </form>
+      </form>
 
-    <div id="messages">
+      <div id="messages">
         <div id="error"></div>
         <div id="warning"></div>
+      </div>
     </div>
-</div>
-</body>
+  </body>
 </html>
